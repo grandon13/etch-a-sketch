@@ -1,5 +1,5 @@
 * {
-    border: 1px solid red;
+   border: 1px solid rgb(221, 221, 221);
 }
 
 html, body {
@@ -11,12 +11,14 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
-
 }
 
 nav {
     background-color: pink;
-    height: 30px;
+    height: 60px;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
 }
 
 .content {
@@ -29,7 +31,8 @@ nav {
 
 .workspace {
     background-color: white;
-    width: 640px;
-    height: 640px;
+    width: 800px;
+    height: 800px;
     display: grid;
+    border: 2px solid black;
 }

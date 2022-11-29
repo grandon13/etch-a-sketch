@@ -13,12 +13,13 @@ html, body {
     height: 100%;
 }
 
-nav {
+.header {
     background-color: pink;
     height: 60px;
     display: flex;
     padding: 20px;
     justify-content: center;
+    gap: 20px;
 }
 
 .content {

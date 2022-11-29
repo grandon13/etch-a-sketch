@@ -55,3 +55,10 @@ const gridBtn = document.querySelector('.setGrid');
 gridBtn.addEventListener('click', () => {
     setGridSize();
 });
+
+const resetBtn = document.querySelector('.reset');
+resetBtn.addEventListener('click', () => {
+    removeGrid();
+    buildGrid(gridSize);
+    colorGrid();
+});

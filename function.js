@@ -9,7 +9,7 @@ function getRandomRGB() {
     let red, green, blue;
     let rgbColor;
 
-    red = Math.floor(Math.random() * 255 );
+    red = Math.random() * 255;
     green = Math.floor(Math.random() * 255 );
     blue = Math.floor(Math.random() * 255 );
 
@@ -46,9 +46,26 @@ function removeGrid() {
 //Colors cells when the mouse hovers over them
 function colorGrid() {
     const cells = document.querySelectorAll('.cell');
-    cells.forEach(brick => brick.addEventListener('mouseover', () => {
-        brick.style.backgroundColor = getRandomRGB();
-    }));
+
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].addEventListener('mouseover', () => {
+            if (! cells[i].classList.contains('colored')) {
+                cells[i].style.backgroundColor = getRandomRGB();
+                cells[i].classList.toggle('colored');
+            }
+            else {
+                dimColor(cells[i].style.backgroundColor);
+            }
+        });
+    }
+}
+
+function dimColor(rgb) {
+    rgb = rgb.slice(4, -1);
+    let rgbArray = rgb.split(', ').map(str => {
+        return Number(str);
+    });
+    console.log(rgbArray);
 }
 
 const gridBtn = document.querySelector('.setGrid');
